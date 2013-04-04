@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+    {% if messages %}
+        <ul>
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+
+
+    <h1>user_profile Detail: {{ user_profile }}</h1>
+    <li>Birthday: {{ user_profile.date_of_birth }}</li>
+    <li>website: {{ user_profile.website }}</li>
+    <li>description: {{ user_profile.description }}</li>
+    <li>gender: {{ user_profile.gender }}</li>
+    <li>Country: {{ user_profile.country }}</li>
+    <p><a href="/user_profile/settings/account/{{ user_profile.pk }}/">Edit Account</a></p>
+    <p><a href="/user_profile/settings/profile/{{ user_profile.pk }}/">Edit Profile</a></p>
+{% endblock %}

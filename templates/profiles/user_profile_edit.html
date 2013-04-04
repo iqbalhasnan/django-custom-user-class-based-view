@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}<!-- start: content block -->
+
+
+    {% if messages %}
+        <ul>
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+
+
+    <h1>Edit User &dash; {{ form.instance }}</h1>
+    <form method="post" action=".">
+        {% csrf_token %}
+        <fieldset>
+            <legend>Edit Profile Information</legend>
+            {{ form.as_p }}
+            <button type="submit" class="btn">Submit</button>
+        </fieldset>
+    </form>
+{% endblock %}
+<!-- end: content block -->
