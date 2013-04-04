@@ -1,23 +1,9 @@
-#import from django
-from django.utils.translation import ugettext as _
-from django.db import models
-from django.conf import settings
-from django.contrib.auth.decorators import login_required
-from django.core.urlresolvers import reverse
-from django.shortcuts import get_object_or_404
-from django.http import Http404
-
-from django.views.generic.edit import FormView
-
 #class based view import for list User
 from django.views.generic.list import ListView
 #class based view import for displaying User
 from django.views.generic.detail import DetailView
 #class based view import for editing User
 from django.views.generic.edit import UpdateView
-
-#class based view import for deactivate User
-#from django.views.generic.edit import DeleteView
 
 #method decorator
 from django.utils.decorators import method_decorator

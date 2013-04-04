@@ -11,13 +11,9 @@ else:
 
 
 from django import forms
-from django.core.exceptions import ObjectDoesNotExist
-from django.core.exceptions import ImproperlyConfigured
 from django.db import models
-from django.utils.translation import ugettext as _
-from django.conf import settings
-import mimetypes, urllib
-from profiles.countries import CountryField
+
+
 
 
 class AccountForm(forms.ModelForm):
