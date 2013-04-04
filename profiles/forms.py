@@ -19,7 +19,7 @@ from django.db import models
 class AccountForm(forms.ModelForm):
     """
     Account Settings Form, Composed of
-    username, email,is_private, location,latitude,longitude,country
+    username, email
     """
     class Meta:
         model = User
@@ -28,7 +28,7 @@ class AccountForm(forms.ModelForm):
 class ProfileForm(forms.ModelForm):
     """
     Profile Form. Composed of
-    first_name,last_name,date_of_birth,gender,website,twitter,description
+    first_name,last_name,date_of_birth,gender
     """
     class Meta:
         model = User
