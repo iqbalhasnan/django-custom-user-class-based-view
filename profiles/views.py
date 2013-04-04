@@ -54,5 +54,5 @@ class UserDetailView(DetailView):
     template_name = "profiles/user_detail.html"
     #use username instead of pk
     slug_field = "username"
-    #override the context user object from user to user_profile, user {{ user_profile }} instead of {{ user }} in template
+    #override the context user object from user to user_profile, use {{ user_profile }} instead of {{ user }} in template
     context_object_name = "user_profile"
