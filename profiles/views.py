@@ -19,7 +19,7 @@ from .mixins import LoginRequiredMixin
 class AccountUpdateView(LoginRequiredMixin, UpdateView):
     """
     Class that only allows authentic user to update their account
-    username, email,is_private, location,latitude,longitude,country
+    username, email
     """
     model = User
     form_class = AccountForm
@@ -29,7 +29,7 @@ class AccountUpdateView(LoginRequiredMixin, UpdateView):
 class ProfileUpdateView(LoginRequiredMixin, UpdateView):
     """
     Class that only allows authentic user to update their profile
-    Composed of first_name,last_name,date_of_birth,gender,website,twitter,description
+    Composed of first_name,last_name,date_of_birth,gender,
     """
     model = User
     form_class = ProfileForm
@@ -38,15 +38,21 @@ class ProfileUpdateView(LoginRequiredMixin, UpdateView):
 
 #List Views
 class UserListView(ListView):
+    """
+    Class to list all the user
+    """
     model = User
     template_name = "profiles/user_list.html"
     context_object_name = "users"
 
 # Detail Views
 class UserDetailView(DetailView):
+    """
+    Class to display user profile in detail
+    """
     model = User
     template_name = "profiles/user_detail.html"
     #use username instead of pk
     slug_field = "username"
-    #override the context user object from user to user_profile
+    #override the context user object from user to user_profile, user {{ user_profile }} instead of {{ user }} in template
     context_object_name = "user_profile"
