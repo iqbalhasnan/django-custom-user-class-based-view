@@ -1,4 +1,3 @@
-django-custom-user-cbv
+Example of Class-Based View usage with custom user in django 1.5
 ======================
 
-Example of Django Project with Custom User and Class-Based View
