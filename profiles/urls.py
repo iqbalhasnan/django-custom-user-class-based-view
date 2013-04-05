@@ -8,7 +8,7 @@ urlpatterns = patterns('',
     #index homepage
     url(r"^(?P<slug>[\w-]+)/$", UserDetailView.as_view(), name="user_detail"),
     #serve static file
-    url(r"^user/settings/account/(?P<pk>[\w-]+)/$", MessageAccountUserEdit.as_view(), name="user_account_edit"),
-    url(r"^user/settings/profile/(?P<pk>[\w-]+)/$", MessageProfileUserEdit.as_view(), name="user_profile_edit"),
+    url(r"^user/settings/account/(?P<slug>[\w-]+)/$", MessageAccountUserEdit.as_view(), name="user_account_edit"),
+    url(r"^user/settings/profile/(?P<slug>[\w-]+)/$", MessageProfileUserEdit.as_view(), name="user_profile_edit"),
 )
 

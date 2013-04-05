@@ -25,6 +25,10 @@ class AccountUpdateView(LoginRequiredMixin, UpdateView):
     form_class = AccountForm
     template_name = "profiles/user_account_edit.html"
     success_url = "."
+    slug_field = "username"
+    def get_queryset(self):
+        base_qs = super(ProfileUpdateView, self).get_queryset()
+        return base_qs.filter(username=self.request.user.username)
 
 class ProfileUpdateView(LoginRequiredMixin, UpdateView):
     """
@@ -35,6 +39,10 @@ class ProfileUpdateView(LoginRequiredMixin, UpdateView):
     form_class = ProfileForm
     template_name = "profiles/user_profile_edit.html"
     success_url = "."
+    slug_field = "username"
+    def get_queryset(self):
+        base_qs = super(ProfileUpdateView, self).get_queryset()
+        return base_qs.filter(username=self.request.user.username)
 
 #List Views
 class UserListView(ListView):
